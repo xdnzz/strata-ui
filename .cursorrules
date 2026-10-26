@@ -1,0 +1,36 @@
+# strata-ui
+
+Mandatory governance. These rules override style preference, implementation shortcuts, and third-party examples.
+
+Roles: Danilo owns product decisions and review. The partner architect delivers domain modeling, accessibility contracts, and the base implementation. Cursor applies the modules, keeps 1:1 parity with Figma, makes the types and tests pass, and guards this contract.
+
+## Source code
+
+- Zero comments in `.ts`, `.tsx`, and `.css` files. `//` and `/* */` are forbidden.
+- Strict TypeScript. `any`, implicit `any`, and assertions to `any` are forbidden.
+- Polymorphic components use generics. The root element is inferred. The composition pattern is Slot with `asChild`.
+- Compound components expose named parts. Do not flatten the API into a single component with dozens of layout props.
+
+## Tests
+
+- Runner: Vitest. DOM: React Testing Library. Accessibility: vitest-axe (axe-core).
+- Every test file is written 100% in English: file names, `describe`, `it`, labels, and messages.
+- Each component covers keyboard, accessible name, visible focus, and an axe check with no violations.
+
+## Figma, CSS, and TypeScript parity
+
+- The canonical token name is the CSS custom property, including the `--` prefix.
+- The Figma variable uses that name, character for character.
+- The TypeScript contract uses the same literal (`"--color-bg-canvas"`). Public camelCase for tokens is forbidden.
+- Figma variant properties use the same TypeScript literals: `solid`, `outline`, `ghost`, `danger`, `sm`, `md`, `lg`, `rest`, `hover`, `active`, `focus-visible`, `disabled`.
+- Color, space, radius, type, and duration values in Figma are the custom property values. Do not invent a second vocabulary.
+
+## Accessibility
+
+- Default theme: text, placeholders that convey content, control borders, and the focus ring meet a minimum contrast of 7:1.
+- Minimum target size of 44px CSS (WCAG 2.5.5) on interactive controls.
+- Full keyboard support per the component's APG pattern: Tab, Shift+Tab, ArrowUp, ArrowDown, ArrowLeft, ArrowRight, Enter, Space, Escape, Home, End.
+- Focus uses `:focus-visible`. Ring is 2px with a 2px offset, color `--color-focus-ring`. Removing the outline without that replacement is forbidden.
+- Full ARIA attributes for the component pattern. The accessible name is visible. Decorative icons are `aria-hidden`.
+- Disabled does not use opacity to fade text. It uses `--color-fg-disabled` on `--color-bg-surface` or `--color-bg-canvas`.
+- `--color-bg-muted` and `--color-bg-overlay` do not receive text.

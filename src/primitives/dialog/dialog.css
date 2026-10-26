@@ -1,0 +1,77 @@
+.strata-dialog__overlay[data-part='overlay'] {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-dialog);
+    background-color: var(--dialog-overlay);
+  }
+  
+  .strata-dialog__surface[data-part='surface'] {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: var(--z-dialog);
+    width: 100%;
+    max-width: var(--dialog-max-width);
+    padding: var(--dialog-pad);
+    background-color: var(--dialog-bg);
+    color: var(--dialog-fg);
+    border: var(--size-border) solid var(--dialog-border);
+    border-radius: var(--dialog-radius);
+    font-family: var(--font-family-sans);
+  }
+  
+  .strata-dialog__surface[data-part='surface']:focus-visible {
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+  }
+  
+  .strata-dialog__title[data-part='title'] {
+    margin: 0 0 var(--space-2) 0;
+    color: var(--dialog-fg);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+  }
+  
+  .strata-dialog__description[data-part='description'] {
+    margin: 0 0 var(--space-5) 0;
+    color: var(--dialog-fg-description);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-body);
+  }
+  
+  .strata-dialog__close[data-part='close'] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--size-target-min);
+    min-height: var(--size-target-min);
+    padding-inline: var(--space-3);
+    background-color: var(--color-bg-surface);
+    color: var(--color-fg-default);
+    border: var(--size-border) solid var(--color-border-default);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+  }
+  
+  .strata-dialog__close[data-part='close']:hover {
+    background-color: var(--color-bg-subtle);
+  }
+  
+  .strata-dialog__close[data-part='close']:focus-visible {
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+  }
+  
+  .strata-dialog__actions[data-part='actions'] {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+  }
+  

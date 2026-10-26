@@ -1,0 +1,7 @@
+node_modules/
+dist/
+coverage/
+.next/
+.turbo/
+*.log
+.DS_Store

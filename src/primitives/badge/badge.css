@@ -1,0 +1,49 @@
+.strata-badge[data-part='root'] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: var(--badge-pad-x);
+    border-radius: var(--badge-radius);
+    font-family: var(--font-family-sans);
+    font-size: var(--badge-font-size);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-tight);
+    white-space: nowrap;
+  }
+  
+  .strata-badge[data-part='root'][data-size='sm'] {
+    padding-block: var(--space-1);
+  }
+  
+  .strata-badge[data-part='root'][data-size='md'] {
+    padding-block: var(--space-2);
+  }
+  
+  .strata-badge[data-part='root'][data-variant='neutral'] {
+    background-color: var(--badge-bg-neutral);
+    color: var(--badge-fg-neutral);
+  }
+  
+  .strata-badge[data-part='root'][data-variant='accent'] {
+    background-color: var(--badge-bg-accent);
+    color: var(--badge-fg-accent);
+  }
+  
+  .strata-badge[data-part='root'][data-variant='success'] {
+    background-color: var(--badge-bg-success);
+    color: var(--badge-fg-success);
+  }
+  
+  .strata-badge[data-part='root'][data-variant='warning'] {
+    background-color: var(--badge-bg-warning);
+    color: var(--badge-fg-warning);
+  }
+  
+  .strata-badge[data-part='root'][data-variant='danger'] {
+    background-color: var(--badge-bg-danger);
+    color: var(--badge-fg-danger);
+  }
+  
+  .strata-badge__label[data-part='label'] {
+    display: inline-block;
+  }

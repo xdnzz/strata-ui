@@ -1,0 +1,115 @@
+.strata-button[data-part='root'] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--button-gap);
+    padding-inline: var(--button-pad-x);
+    min-width: var(--size-target-min);
+    min-height: var(--size-target-min);
+    border-radius: var(--button-radius);
+    border-width: var(--size-border);
+    border-style: solid;
+    border-color: transparent;
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-tight);
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    transition:
+      background-color var(--duration-fast) var(--ease-standard),
+      color var(--duration-fast) var(--ease-standard),
+      border-color var(--duration-fast) var(--ease-standard);
+  }
+  
+  .strata-button[data-part='root'][data-size='sm'] {
+    height: var(--button-height-sm);
+    font-size: var(--font-size-sm);
+  }
+  
+  .strata-button[data-part='root'][data-size='md'] {
+    height: var(--button-height-md);
+    font-size: var(--font-size-md);
+  }
+  
+  .strata-button[data-part='root'][data-size='lg'] {
+    height: var(--button-height-lg);
+    font-size: var(--font-size-lg);
+  }
+  
+  .strata-button[data-part='root'][data-variant='solid'] {
+    background-color: var(--button-bg-solid);
+    color: var(--button-fg-solid);
+  }
+  
+  .strata-button[data-part='root'][data-variant='solid']:hover:not([aria-disabled='true']),
+  .strata-button[data-part='root'][data-variant='solid'][data-state='hover'],
+  .strata-button[data-part='root'][data-variant='solid'][data-state='active'] {
+    background-color: var(--button-bg-solid-hover);
+  }
+  
+  .strata-button[data-part='root'][data-variant='outline'] {
+    background-color: var(--button-bg-outline);
+    color: var(--button-fg-outline);
+    border-color: var(--button-border-outline);
+  }
+  
+  .strata-button[data-part='root'][data-variant='outline']:hover:not([aria-disabled='true']),
+  .strata-button[data-part='root'][data-variant='outline'][data-state='hover'],
+  .strata-button[data-part='root'][data-variant='outline'][data-state='active'] {
+    background-color: var(--button-bg-outline-hover);
+  }
+  
+  .strata-button[data-part='root'][data-variant='ghost'] {
+    background-color: var(--button-bg-ghost);
+    color: var(--button-fg-ghost);
+  }
+  
+  .strata-button[data-part='root'][data-variant='ghost']:hover:not([aria-disabled='true']),
+  .strata-button[data-part='root'][data-variant='ghost'][data-state='hover'],
+  .strata-button[data-part='root'][data-variant='ghost'][data-state='active'] {
+    background-color: var(--button-bg-ghost-hover);
+  }
+  
+  .strata-button[data-part='root'][data-variant='danger'] {
+    background-color: var(--button-bg-danger);
+    color: var(--button-fg-danger);
+  }
+  
+  .strata-button[data-part='root'][data-variant='danger']:hover:not([aria-disabled='true']),
+  .strata-button[data-part='root'][data-variant='danger'][data-state='hover'],
+  .strata-button[data-part='root'][data-variant='danger'][data-state='active'] {
+    background-color: var(--button-bg-danger-hover);
+  }
+  
+  .strata-button[data-part='root']:focus-visible,
+  .strata-button[data-part='root'][data-state='focus-visible'] {
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+  }
+  
+  .strata-button[data-part='root']:disabled,
+  .strata-button[data-part='root'][aria-disabled='true'],
+  .strata-button[data-part='root'][data-state='disabled'] {
+    background-color: var(--button-bg-disabled);
+    color: var(--button-fg-disabled);
+    border-color: var(--button-border-disabled);
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+  }
+  
+  .strata-button__leading,
+  .strata-button__trailing {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--size-icon-md);
+    height: var(--size-icon-md);
+    flex-shrink: 0;
+  }
+  
+  .strata-button__label {
+    display: inline-block;
+    white-space: nowrap;
+  }

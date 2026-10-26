@@ -1,0 +1,36 @@
+---
+description: strata-ui governance — zero comments, strict TypeScript, English tests, token parity, and WCAG AAA
+alwaysApply: true
+---
+
+# strata-ui
+
+These rules override style preference and third-party examples. Danilo owns product decisions. Cursor keeps Figma parity, types, tests, and this contract.
+
+## Source code
+
+- Zero comments in `.ts`, `.tsx`, and `.css`. `//` and `/* */` are forbidden.
+- Strict TypeScript. `any`, implicit `any`, and assertions to `any` are forbidden.
+- Polymorphism uses generics and Slot/`asChild`. Compound components expose named parts.
+
+## Tests
+
+- Vitest, React Testing Library, and vitest-axe.
+- Test files are 100% in English: names, `describe`, `it`, labels, and messages.
+- Cover keyboard, accessible name, visible focus, and axe with no violations.
+
+## Figma, CSS, and TypeScript parity
+
+- Canonical token name = the CSS custom property, including `--`.
+- The Figma variable and the TypeScript literal use that same name. Public camelCase for tokens is forbidden.
+- Figma variants use the TypeScript literals (`solid`, `outline`, `ghost`, `danger`, `sm`, `md`, `lg`, `rest`, `hover`, `active`, `focus-visible`, `disabled`).
+
+## Accessibility
+
+- Default theme: text, control borders, and the focus ring meet a minimum contrast of 7:1.
+- Minimum target size of 44px CSS on interactive controls.
+- Keyboard per APG: Tab, Shift+Tab, arrows, Enter, Space, Escape, Home, End.
+- `:focus-visible` with a 2px ring, 2px offset, color `--color-focus-ring`.
+- Complete ARIA. The accessible name is visible. Decorative icons are `aria-hidden`.
+- Disabled uses `--color-fg-disabled` on `--color-bg-surface` or `--color-bg-canvas`, with no opacity fade.
+- `--color-bg-muted` and `--color-bg-overlay` do not receive text.
