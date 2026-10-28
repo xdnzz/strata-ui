@@ -326,6 +326,7 @@ export const ComboboxInput = React.forwardRef<HTMLDivElement, ComboboxInputProps
 
     const activeRecord = optionsRef.current.find((item) => item.value === activeValue);
     const selectedRecord = optionsRef.current.find((item) => item.value === selectedValue);
+    const visibleValue = selectedRecord ? selectedRecord.label : placeholder;
 
     const state: ComboboxState = disabled
       ? 'disabled'
@@ -354,6 +355,7 @@ export const ComboboxInput = React.forwardRef<HTMLDivElement, ComboboxInputProps
         aria-activedescendant={open && activeRecord ? activeRecord.id : undefined}
         aria-disabled={disabled ? true : undefined}
         aria-invalid={invalid ? true : undefined}
+        aria-label={children == null ? visibleValue : undefined}
         data-part="input"
         data-state={state}
         data-placeholder={selectedRecord ? undefined : ''}
@@ -380,7 +382,7 @@ export const ComboboxInput = React.forwardRef<HTMLDivElement, ComboboxInputProps
         }}
         {...restProps}
       >
-        {children ?? (selectedRecord ? selectedRecord.label : placeholder)}
+        {children ?? visibleValue}
       </Component>
     );
   }

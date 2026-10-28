@@ -8,3 +8,5 @@ export * from './primitives/dialog/dialog.types';
 export * from './primitives/dialog/dialog';
 export * from './primitives/badge/badge.types';
 export * from './primitives/badge/badge';
+export * from './workbench/workbench.types';
+export * from './workbench/workbench';
